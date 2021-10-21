@@ -1,9 +1,20 @@
-import React from 'react'
+import React from "react";
+import { red } from "../../utils/colours";
 
-const MenuBar = () => {
+const MenuBar = (props) => {
+
+  if (props.width <= 576) {
+    return null;
+  }
+
   return (
-    <div>
-      <p>Menu</p>
+    <div style={{display: "flex", justifyContent: "flex-end"}}>
+      <button 
+        className="button"
+        style={{backgroundColor: red}}
+      >
+        Logout
+      </button>
     </div>
   )
 }

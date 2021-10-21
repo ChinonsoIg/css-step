@@ -1,22 +1,24 @@
-import React from 'react'
+import React from "react";
+import { blue } from "../utils/colours";
 
 const StepperButton = (props) => {
+  const { step, title } = props;
+
+  if (step > 3) {
+    return null
+  }
+
   return (
-    <div className="btn-section">
-      {/* <Button 
-        style={{margin: 0}}
-        color="blue" 
-        onClick={props.clickEvent} >
-          {props.value}
-      </Button> */}
+    <div style={{display: "flex", justifyContent: "flex-end"}}>
       <button 
         className="button"
         onClick={props.clickEvent}
+        style={{backgroundColor: blue}}
       >
-        {props.value}
+        {title}
       </button>
     </div>
-  )
+  );
 }
 
 export default StepperButton;

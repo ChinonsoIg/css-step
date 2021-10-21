@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import './App.css';
 import MobileHome from "./pages/MobileHome";
+import DesktopHome from "./pages/DesktopHome";
 
 const App = () => {
   const [dimensions, setDimensions] = useState({ 
@@ -25,10 +25,9 @@ const App = () => {
 
   return (
     <div textAlign='justified' className="wrapper">
-      {/* {
-        dimensions.width > 992 ? <DesktopHome /> : <MobileHome />
-      } */}
-      <MobileHome />
+      {
+        dimensions.width > 992 ? <DesktopHome /> : <MobileHome width={dimensions.width} />
+      }
     </div>
   );
 }

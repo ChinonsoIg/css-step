@@ -1,0 +1,13 @@
+export const image_bg = "#f3ebc9";
+export const blue = "#0064ff";
+export const dark_blue = "#141737";
+export const white = "#fff";
+export const grey = "#e6e6e6";
+export const dark_grey = "#737373";
+export const btn_primary = "#f5f6fa";
+export const btn_secondary = "#0dceaff";
+export const btn_highlight = "#dceaff"
+export const red = "#ff6774";
+export const bg_primary = "#efe5e5";
+export const bg_secondary = "#e9eef4";
+export const key = "#5257f5";

@@ -1,65 +1,117 @@
-// import React, { Component } from 'react'
-// import MenuBar from "../components/semantics/MenuBar";
-// import Stepper from "../components/semantics/Stepper";
-// import BusinessCategory from "../components/BusinessCategory";
-// import SocialHandles from '../components/SocialHandles';
-// import StepCount from '../components/StepCount';
-// import VerifyAccount from '../components/verifyaccount/VerifyAccount';
-// import Divider from "../components/semantics/Divider";
+import React, { Component } from "react";
+import MenuBar from "../components/semantics/MenuBar";
+import Stepper from "../components/semantics/Stepper";
+import BusinessCategory from "../components/BusinessCategory";
+import SocialHandles from "../components/SocialHandles";
+import StepCount from "../components/StepCount";
+import VerifyAccount from "../components/verifyaccount/VerifyAccount";
+import StepperButton from "../components/StepperButton";
+import Divider from "../components/semantics/Divider";
+import { MiniButton } from "../components/semantics/Buttons";
+import image_2 from "../images/image_2.svg";
 
-// import StepperButton from '../components/StepperButton';
-// import StepperButton from '../components/StepperButton';
-// import image_2 from "../image/image_2.svg";
 
+class MobileHome extends Component {
+  
+  state = {
+    step: 1,
+  }
 
-// class DesktopHome extends Component {
-//   state = {
-//     step: 1,
-//   }
+  handleStep = () => {
+    return this.setState({ step: this.state.step + 1 })
+  };
 
-//   handleStep = () => {
-//     return this.setState({ step: this.state.step + 1 })
-//   }
+  handleRefresh = () => {
+    return window.location.reload(false);
+  };
 
-//   render () {
-//     const { handleStep } = this;
-//     const { step } = this.state;
+  render () {
+    const { handleStep, handleRefresh } = this;
+    const { step } = this.state;
+    const { width } = this.props;
 
-//     return (
-//       <section className="desktop-view">
-//         <p>Deestop</p>
-        
-//         <img src={image_2} className="image-content" alt="logo" />
+    return (
+      <section className="desktop-view">  
+        <img 
+          src={image_2} 
+          className="image-content"
+          alt="logo" 
+        />
 
-//         <section className="main-content">
-//           <MenuBar />
-//           <Stepper step={step} />
-//           <Divider />
-//           <StepCount count={step} />
-//           {
-//             step === 1 
-//               ? <VerifyAccount />
-//               : step === 2 
-//                 ? <SocialHandles />
-//                 : step === 3 
-//                   ? <BusinessCategory />
-//                   : (
-//                     <div>
-//                         <h3>The End!</h3>
-//                       <p>
-//                         You have reached the end of the design. Kindly refresh your browser.
-//                       </p>
-//                     </div>
-//                   )
-//           }
-//           <Divider />
-//           <StepperButton />
-//         </section>
+        <div className="main-content">
+          <MenuBar width={width} />
+          {
+            width <= 576
+              ? (
+                <Stepper 
+                  className="flex-item"
+                  step={step}
+                  number={1}
+                  title="Verify Account"
+                  width={width}
+                />
+              ) : (
+                <div className="flex-container">
+                  <Stepper 
+                    className="flex-item"
+                    step={step}
+                    number={1}
+                    title="Verify Account"
+                    width={width}
+                  />
+                  <Stepper 
+                    className="flex-item"
+                    step={step}
+                    number={2}
+                    title="Social Handles"
+                    width={width}
+                  />
+                  <Stepper 
+                    className="flex-item"
+                    step={step}
+                    number={3}
+                    title="Business Category"
+                    width={width}
+                  />
+                </div>
+              )
+          }
+          <Divider />
+          <StepCount count={step} />
+          {
+            step === 1 
+              ? <VerifyAccount />
+              : step === 2 
+                ? <SocialHandles />
+                : step === 3 
+                  ? <BusinessCategory />
+                  : (
+                    <div style={{display: "grid", placeItems: "center"}}>
+                        <h3>The End!</h3>
+                      <p>
+                        You have reached the end of the design. Kindly refresh your browser to return home.
+                      </p>
+                      <MiniButton title="Refresh" clickEvent={handleRefresh} />
+                    </div>
+                  )
+          }
+          <Divider />
+          <StepperButton 
+            title={step === 1 
+              ? "Continue"
+              : (step === 2 
+                ? "Confirm Social Handles"
+                : "Complete" )
+            }
+            clickEvent={handleStep}
+            step={step}
+          />
+        </div>
+      </section>
+    );
+  }
 
-//       </section>
-//     );
-//   }
+}
 
-// }
+export default MobileHome;
 
-// export default DesktopHome;

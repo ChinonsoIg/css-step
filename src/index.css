@@ -7,13 +7,93 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* For screens greater than 1500px */
+@media (min-width: 1500px) {
+  .wrapper {
+    margin: 0 auto;
+    height: 100vh;
+    width: 1500px;
+    background-color: #e5e5e5;
+  }
+
+  .desktop-view {
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
+
+  .main-content {
+    padding: 0.5em 2em;
+    flex-grow: 2;
+  }
+
+}
+
+/* For screens less than 1500px */
+@media (max-width: 1500px) {
+  .wrapper {
+    height: 100vh;
+    max-width: 1500px;
+    background-color: #e5e5e5;
+  }
+  
+  .desktop-view {
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
+
+  .main-content {
+    padding: 0.5em 2em;
+    flex-grow: 2;
+  }
+
+}
+
+/* For screen less than 992px */
+@media (max-width: 992px) {
+  .wrapper {
+    height: fit-content;
+    max-width: 100%;
+    background-color: #e5e5e5;
+  }  
+  
+  .main-content {
+    padding: 0.5em 2em;
+  }
+
+}
+
+/* For screen less than 452px */
+@media (max-width: 452px) {
+  .wrapper {
+    height: fit-content;
+    max-width: 100%;
+    background-color: #e5e5e5;
+  }  
+  
+  .main-content {
+    padding: 0.5em 0.8em;
+  }
+
+}
+
+/* For all screen sizes */
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-item {
+  align-self: center;
+}
+.flex-item-2 {
+  align-self: center;
+  width: 45%;
 }
 
 .button {
-  background-color: #4CAF50;
   border: none;
   color: white;
   padding: 15px 32px;
@@ -22,5 +102,22 @@ code {
   display: inline-block;
   font-size: 16px;
   margin: 4px 2px;
+  border-radius: 5px;
   cursor: pointer;
+}
+
+input {
+  width: 100%;
+  padding: 0.8em 1em;
+  margin: 0.6em 0;
+  display: inline-block;  
+  border-radius: 4px;
+  box-sizing: border-box;
+  border-width: 1px;
+  border-style: 'solid';
+}
+select {
+  width: 100%;
+  padding: 0.8em 1em;
+  margin: 0.6em 0;
 }

@@ -1,64 +1,87 @@
-import React, { Component } from 'react';
-// import Bvn from "./Bvn";
-// import PersonalAccountNumber from "./PersonalAccountNumber";
+import React, { Component } from "react";
+import { BasicButton } from "../semantics/Buttons";
+import Bvn from "./Bvn";
+import PersonalAccountNumber from "./PersonalAccountNumber";
+import { dark_blue, blue, dark_grey, btn_primary, btn_highlight } from "../../utils/colours";
 
 class VerifyAccount extends Component {
-  // state = {
-  //   activeButton: "bvn",
-  // }
+  state = {
+    isBvnActive: true,
+    isPanActive: false,
+  }
   
-  // handleButtonClick = (e, { name }) => {
-  //   this.setState({ 
-  //     activeButton: name
-  //   });
-  // }
+  handleButtonClick = (e) => {
+    this.setState({ 
+      isBvnActive: !this.state.isBvnActive,
+      isPanActive: !this.state.isPanActive
+    });
+  }
 
   render() {
-    // const { activeButton } = this.state;
+    const { isBvnActive, isPanActive } = this.state;
+
+    let activeStyle = {
+      borderWidth: "1px",
+      borderStyle: "solid",
+      borderColor: blue,
+      color: dark_blue,
+      backgroundColor: btn_highlight,
+      padding: "5px 11px",
+      textAlign:" center",
+      textDecoration: "none",
+      display: "inline-block",
+      fontSize: "16px",
+      margin: "4px 2px",
+      borderRadius: "5px",
+      cursor: "pointer",
+    }
+
+    let simpleStyle = {
+      borderWidth: "1px",
+      borderStyle: "solid",
+      borderColor: dark_grey,
+      color: dark_blue,
+      backgroundColor: btn_primary,
+      padding: "5px 11px",
+      textAlign:" center",
+      textDecoration: "none",
+      display: "inline-block",
+      fontSize: "16px",
+      margin: "4px 2px",
+      borderRadius: "5px",
+      cursor: "pointer",
+    }
 
     return (
       <section className="margin-two">
-        <p>Verify Account</p>
-        {/* <Header as="h3">
-          Verify Account
-        </Header>
+        <h3>Verify Account</h3>
         <div className="margin-point-three">
           <p style={{marginBottom: 0}}>Select a verification method</p>
           <div className="mobile-wrap">
-            <Button 
-              basic 
+            <BasicButton 
               name="bvn"
-              active={activeButton === "bvn"}
-              color={activeButton === "bvn" ? "blue" : null}
-              onClick={this.handleButtonClick}
-              style={{marginRight: "1em", borderRadius: "0.8em"}}
-              className="mobile-item"
-              >
-              BVN
-            </Button>
-            <Button 
-              basic 
+              clickEvent={(e) => this.handleButtonClick(e)}
+              style={isBvnActive ? activeStyle : simpleStyle}
+              title="BVN"
+            />
+            <BasicButton 
               name="pan"
-              active={activeButton === "pan"}
-              color={activeButton === "pan" ? "blue" : null}
-              onClick={this.handleButtonClick}
-              style={{marginLeft: "1em", borderRadius: "0.8em"}}
-              className="mobile-item"
-              >
-              Personal Account Number
-            </Button>
+              clickEvent={(e) => this.handleButtonClick(e)}
+              style={isPanActive ? activeStyle : simpleStyle}
+              title="Personal Account Number"
+            />
           </div>
         </div>
         <div>
           {
-            activeButton === "bvn" 
+            isBvnActive 
               ? <Bvn /> 
               : <PersonalAccountNumber />
           }
-        </div> */}
+        </div>
       </section>
     );
   }
 }
 
-export default VerifyAccount
+export default VerifyAccount;
