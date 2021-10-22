@@ -10,12 +10,13 @@ class BusinessCategory extends Component {
   
   handleButtonClick = (e) => {
     this.setState({ 
-      isYesActive: !this.state.isBvnActive,
-      isNoActive: !this.state.isPanActive
+      isYesActive: !this.state.isYesActive,
+      isNoActive: !this.state.isNoActive
     });
   }
 
   render () {
+    const { handleButtonClick } = this;
     const { isYesActive, isNoActive } = this.state;;
 
     let activeStyle = {
@@ -80,13 +81,13 @@ class BusinessCategory extends Component {
           <div>
             <BasicButton 
               name="yes"
-              clickEvent={(e) => this.handleButtonClick(e)}
+              clickEvent={(e) => handleButtonClick(e)}
               style={isYesActive ? activeStyle : simpleStyle}
               title="Yes"
             />
             <BasicButton 
               name="no"
-              clickEvent={(e) => this.handleButtonClick(e)}
+              clickEvent={(e) => handleButtonClick(e)}
               style={isNoActive ? activeStyle : simpleStyle}
               title="No"
             />

@@ -18,6 +18,7 @@ class VerifyAccount extends Component {
   }
 
   render() {
+    const { handleButtonClick } = this;
     const { isBvnActive, isPanActive } = this.state;
 
     let activeStyle = {
@@ -53,20 +54,20 @@ class VerifyAccount extends Component {
     }
 
     return (
-      <section className="margin-two">
-        <h3>Verify Account</h3>
+      <section>
+        <h3 style={{margin: '0.2em'}}>Verify Account</h3>
         <div className="margin-point-three">
           <p style={{marginBottom: 0}}>Select a verification method</p>
           <div className="mobile-wrap">
             <BasicButton 
               name="bvn"
-              clickEvent={(e) => this.handleButtonClick(e)}
+              clickEvent={(e) => handleButtonClick(e)}
               style={isBvnActive ? activeStyle : simpleStyle}
               title="BVN"
             />
             <BasicButton 
               name="pan"
-              clickEvent={(e) => this.handleButtonClick(e)}
+              clickEvent={(e) => handleButtonClick(e)}
               style={isPanActive ? activeStyle : simpleStyle}
               title="Personal Account Number"
             />

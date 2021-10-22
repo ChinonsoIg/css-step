@@ -5,7 +5,7 @@ import tick from "../../images/tick.svg";
 
 const ToggleShow = () => {
   return (
-    <div style={{padding: "0.2em 2em"}}>
+    <div style={{padding: "0.1em 2em"}}>
       <p style={{margin: "0"}}>We only need access to your:</p>
       <ul 
         style={{
@@ -19,8 +19,7 @@ const ToggleShow = () => {
           style={{
             display: "flex", 
             justifyContent: "flex-start", 
-            alignItems: "center", 
-            
+            alignItems: "center",             
             padding: "0",
           }}
         >
@@ -73,8 +72,15 @@ const ToggleShow = () => {
       </ul>
       <Divider />
       <div style={{display: "flex"}}>
-        <img src={key} alt="Key" />
-        <p style={{margin: "0 0.7em", fontWeight: 600}}>Your BVN does not give us acces to your transactions.</p>
+        <img 
+          src={key} 
+          alt="Key"
+          style={{
+            padding: "0 0.5em 0 0",
+            margin: 0
+          }}
+        />
+        <p style={{margin: "0 0.5em", fontWeight: 600}}>Your BVN does not give us acces to your transactions.</p>
       </div>
     </div>
   );
