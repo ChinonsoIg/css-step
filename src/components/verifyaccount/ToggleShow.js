@@ -1,7 +1,7 @@
 import React from "react";
 import Divider from "../semantics/Divider";
-import key from "../../images/key.svg";
-import tick from "../../images/tick.svg";
+import key from "../../images/key.png";
+import tick from "../../images/tick.png";
 
 const ToggleShow = () => {
   return (
@@ -71,16 +71,18 @@ const ToggleShow = () => {
         </li>
       </ul>
       <Divider />
-      <div style={{display: "flex"}}>
+      <div style={{display: "flex", alignItems: 'center'}}>
         <img 
           src={key} 
           alt="Key"
           style={{
             padding: "0 0.5em 0 0",
-            margin: 0
+            margin: 0,
           }}
         />
-        <p style={{margin: "0 0.5em", fontWeight: 600}}>Your BVN does not give us acces to your transactions.</p>
+        <p style={{margin: "0 0.5em", fontWeight: 600}}>
+          Your BVN does not give us acces to your transactions.
+        </p>
       </div>
     </div>
   );

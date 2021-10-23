@@ -1,6 +1,5 @@
 import React from "react";
-import TickCompleted from "./TickCompleted";
-import { GreyButton, BlueButton } from "./Buttons";
+import { GreyButton, BlueButton, CheckmarkButton } from "./Buttons";
 
 const Stepper = (props) => {
   const { step, number, title, width } = props;
@@ -11,7 +10,7 @@ const Stepper = (props) => {
         {
           step <= 3 
             ? <BlueButton number={step} />
-            : <TickCompleted />
+            : <CheckmarkButton />
         }
       </div>
     )
@@ -25,7 +24,7 @@ const Stepper = (props) => {
             ? <BlueButton number={number} />
             : number > step 
               ? <GreyButton number={number} />
-              : <TickCompleted />
+              : <CheckmarkButton />
         }
       </div>
       <p className="flex-item" style={{paddingLeft: "0.2em"}}>{title}</p>

@@ -1,5 +1,5 @@
 import React from "react";
-import { blue, dark_grey, grey, white } from "../../utils/colours"
+import { blue, dark_gray, faint_blue, faint_btn, faint_btn_text, gray, white } from "../../utils/colours"
 
 const BlueButton = (props) => {
   return (
@@ -28,11 +28,29 @@ const GreyButton = (props) => {
         textAlign: "center",
         textDecoration: "none",
         display: "inline-block",
-        backgroundColor: grey, 
-        color: dark_grey,
+        backgroundColor: faint_btn, 
+        color: faint_btn_text,
       }}
       >
         {props.number}
+    </b>
+  )
+}
+
+const CheckmarkButton = () => {
+  return (
+    <b
+      style={{
+        padding: "0.2em 0.6em",
+        borderRadius: "0.2em",
+        textAlign: "center",
+        textDecoration: "none",
+        display: "inline-block",
+        backgroundColor: faint_blue, 
+        color: blue,
+      }}
+      >
+        &#10003;
     </b>
   )
 }
@@ -72,5 +90,4 @@ const MiniButton = (props) => {
   )
 }
 
-
-export { BlueButton, GreyButton, BasicButton, MiniButton };
+export { BlueButton, GreyButton, BasicButton, MiniButton, CheckmarkButton };
