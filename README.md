@@ -4,5 +4,5 @@ This project was done with [Create React App](https://github.com/facebook/create
 
 ## Aim
 
-This was an assessment. I'm using it to showcase my skills with React and pure CSS. It is highly responsive. 
+This was an assessment. I'm using it to showcase my skills with React and pure CSS. It is highly responsive. It demonstrates how useful props can be in the React world.
 You can visit the link [here]( https://musing-bardeen-a5c5b5.netlify.app/).
