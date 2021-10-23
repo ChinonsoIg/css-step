@@ -1,5 +1,5 @@
 import React from "react";
-import { blue, dark_gray, faint_blue, faint_btn, faint_btn_text, gray, white } from "../../utils/colours"
+import { blue, faint_blue, faint_btn, faint_btn_text, white } from "../../utils/colours"
 
 const BlueButton = (props) => {
   return (
