@@ -1,5 +1,5 @@
 import React from "react";
-import { blue, faint_blue, faint_btn, faint_btn_text, white } from "../../utils/colours"
+import { blue, faint_btn, faint_btn_text, white, faint_blue } from "../../utils/colours"
 
 const BlueButton = (props) => {
   return (
@@ -46,7 +46,7 @@ const CheckmarkButton = () => {
         textAlign: "center",
         textDecoration: "none",
         display: "inline-block",
-        backgroundColor: faint_blue, 
+        backgroundColor: faint_blue,
         color: blue,
       }}
       >
