@@ -14,5 +14,5 @@ export const red = "#ff6774";
 export const bg_primary = "#efe5e5";
 export const bg_secondary = "#e9eef4";
 export const key = "#5257f5";
-export const faint_btn = "#E4E9EF";
-export const faint_btn_text = "#A5B4CB";
+export const faint_btn = "#bfcbd9";
+export const faint_btn_text = "#5d79a2";
